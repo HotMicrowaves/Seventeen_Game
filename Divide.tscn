@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0yifgk5wil04"]
+
+[ext_resource type="Texture2D" uid="uid://dutwkkoc26kvc" path="res://Cards/Divide-1.png.png" id="1_fjnfs"]
+[ext_resource type="Script" path="res://Divide.gd" id="1_k52xj"]
+[ext_resource type="Script" path="res://Operations.gd" id="1_vqjyb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b72a"]
+size = Vector2(16, 16.4)
+
+[node name="Divide" type="Node2D"]
+script = ExtResource("1_k52xj")
+
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("the_parent_node")]
+script = ExtResource("1_vqjyb")
+the_parent_node = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_fjnfs")
+
+[node name="Area2D" type="Area2D" parent="Node2D" groups=["Operation"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(0, -2.5)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_1b72a")
+
+[connection signal="body_entered" from="Node2D/Area2D" to="Node2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Node2D/Area2D" to="Node2D" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Node2D/Area2D" to="Node2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/Area2D" to="Node2D" method="_on_area_2d_mouse_exited"]

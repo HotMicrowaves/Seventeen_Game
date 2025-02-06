@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://byiglqsyhhi53"]
+
+[ext_resource type="AudioStream" uid="uid://t57o3urcicel" path="res://Cards/theduel.mp3" id="1_luukd"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_luukd")
+volume_db = -22.0
+autoplay = true

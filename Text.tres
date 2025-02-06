@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cmh48a56jrpto"]
+
+[ext_resource type="FontFile" uid="uid://c3dyxmuf6bi4k" path="res://MinimalPixel v2.ttf" id="1_wk5k6"]
+
+[resource]
+default_font = ExtResource("1_wk5k6")
+default_font_size = 30

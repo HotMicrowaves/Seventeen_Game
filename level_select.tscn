@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3 uid="uid://cac7pe6cx7wc5"]
+
+[ext_resource type="Texture2D" uid="uid://dw04xqd517vkh" path="res://Cards/LeftBar-1.png.png" id="1_rubwt"]
+[ext_resource type="Script" path="res://level_select.gd" id="1_vnhea"]
+[ext_resource type="Texture2D" uid="uid://dre5i1sol8syw" path="res://Cards/MidBar-1.png.png" id="2_dihno"]
+[ext_resource type="Texture2D" uid="uid://3jxo1gpvl3dq" path="res://Cards/RightBar-1.png.png" id="3_yeqkf"]
+[ext_resource type="PackedScene" uid="uid://bmeh5ikv16kmc" path="res://level_nodes.tscn" id="4_1sw4d"]
+[ext_resource type="PackedScene" uid="uid://dqushwib5fwrl" path="res://Player.tscn" id="5_7kyht"]
+[ext_resource type="FontFile" uid="uid://c3dyxmuf6bi4k" path="res://MinimalPixel v2.ttf" id="6_6ydmj"]
+[ext_resource type="PackedScene" uid="uid://btga11mpq68bq" path="res://BG.tscn" id="7_musv1"]
+[ext_resource type="Theme" uid="uid://b0uwx4lwuweaf" path="res://Buttons.tres" id="9_8tce6"]
+
+[node name="Level Select" type="Node2D"]
+script = ExtResource("1_vnhea")
+
+[node name="Level_Nodes" parent="." groups=["Center_Node"] instance=ExtResource("4_1sw4d")]
+position = Vector2(575, 332)
+
+[node name="Level_Nodes2" parent="." groups=["Right_Node"] instance=ExtResource("4_1sw4d")]
+position = Vector2(900, 332)
+
+[node name="Level_Nodes3" parent="." groups=["Left_Node"] instance=ExtResource("4_1sw4d")]
+position = Vector2(250, 332)
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="LeftBar-1_png" type="Sprite2D" parent="UI"]
+position = Vector2(244, 71)
+texture = ExtResource("1_rubwt")
+
+[node name="MidBar-1_png" type="Sprite2D" parent="UI"]
+position = Vector2(509, 71)
+texture = ExtResource("2_dihno")
+
+[node name="RightBar-1_png" type="Sprite2D" parent="UI"]
+position = Vector2(875, 71)
+texture = ExtResource("3_yeqkf")
+
+[node name="LeftBar-1_png2" type="Sprite2D" parent="UI"]
+position = Vector2(1080, 245)
+rotation = 1.5708
+texture = ExtResource("1_rubwt")
+
+[node name="LeftBar-1_png3" type="Sprite2D" parent="UI"]
+position = Vector2(-48, 244)
+rotation = 1.5708
+texture = ExtResource("1_rubwt")
+
+[node name="LeftBar-1_png4" type="Sprite2D" parent="UI"]
+position = Vector2(245, 704)
+texture = ExtResource("1_rubwt")
+
+[node name="MidBar-1_png4" type="Sprite2D" parent="UI"]
+position = Vector2(560, 704)
+texture = ExtResource("2_dihno")
+
+[node name="RightBar-1_png4" type="Sprite2D" parent="UI"]
+position = Vector2(874, 704)
+texture = ExtResource("3_yeqkf")
+
+[node name="RightBar-1_png2" type="Sprite2D" parent="UI"]
+position = Vector2(1080, 379)
+rotation = 1.5708
+texture = ExtResource("3_yeqkf")
+
+[node name="RightBar-1_png3" type="Sprite2D" parent="UI"]
+position = Vector2(-48, 377)
+rotation = 1.5708
+texture = ExtResource("3_yeqkf")
+
+[node name="Player" parent="." instance=ExtResource("5_7kyht")]
+position = Vector2(574, 336)
+scale = Vector2(3, 3)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 353.0
+offset_top = 60.0
+offset_right = 793.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("6_6ydmj")
+theme_override_font_sizes/font_size = 64
+text = "Level Select:"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("7_musv1")]
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 805.0
+offset_top = 484.0
+offset_right = 1030.0
+offset_bottom = 609.0
+theme = ExtResource("9_8tce6")
+text = "Quit"
+
+[node name="Settings" type="Button" parent="."]
+offset_left = 146.0
+offset_top = 491.0
+offset_right = 371.0
+offset_bottom = 616.0
+theme = ExtResource("9_8tce6")
+text = "Settings"
+
+[node name="Save" type="Button" parent="."]
+offset_left = 474.0
+offset_top = 487.0
+offset_right = 699.0
+offset_bottom = 612.0
+theme = ExtResource("9_8tce6")
+text = "Save"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvgflh5dfj1u8"]
+
+[ext_resource type="Texture2D" uid="uid://bmjc4vm8hmr3q" path="res://Cards/Energy_Slider_Outline-1.png.png" id="1_16xar"]
+[ext_resource type="Texture2D" uid="uid://bfnq68hvdidnq" path="res://Cards/XP_Slider-1.png.png" id="2_qobe6"]
+[ext_resource type="Texture2D" uid="uid://5q33llkghxi7" path="res://Cards/Level_Icon.png-1.png.png" id="3_i7keb"]
+[ext_resource type="Script" path="res://xp_slider.gd" id="3_x65qq"]
+[ext_resource type="Theme" uid="uid://cmh48a56jrpto" path="res://Text.tres" id="4_yqd28"]
+[ext_resource type="Script" path="res://XP_Label.gd" id="5_8g02a"]
+
+[node name="XP_Slider" type="TextureProgressBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_over = ExtResource("1_16xar")
+texture_progress = ExtResource("2_qobe6")
+script = ExtResource("3_x65qq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-25, 15)
+scale = Vector2(2, 2)
+texture = ExtResource("3_i7keb")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -7.5
+offset_top = -9.5
+offset_right = 10.5
+offset_bottom = 13.5
+theme = ExtResource("4_yqd28")
+theme_override_font_sizes/font_size = 16
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_8g02a")

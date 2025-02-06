@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj8467tvwicjo"]
+
+[ext_resource type="Texture2D" uid="uid://begwaxmsm7hd6" path="res://Cards/Level_Up-1.png.png" id="1_7nlc8"]
+[ext_resource type="Script" path="res://level_up.gd" id="1_s26a1"]
+[ext_resource type="FontFile" uid="uid://c3dyxmuf6bi4k" path="res://MinimalPixel v2.ttf" id="2_gvlpq"]
+[ext_resource type="Theme" uid="uid://b0uwx4lwuweaf" path="res://Buttons.tres" id="3_dqcpk"]
+
+[node name="Level_Up" type="Node2D" groups=["Level_Pop_Up"]]
+script = ExtResource("1_s26a1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(524, 268)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_7nlc8")
+
+[node name="Previous_Level" type="Label" parent="Sprite2D"]
+offset_left = -149.333
+offset_top = -46.6667
+offset_right = -109.333
+offset_bottom = 1.33333
+theme_override_fonts/font = ExtResource("2_gvlpq")
+theme_override_font_sizes/font_size = 32
+text = "11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Current_Level" type="Label" parent="Sprite2D"]
+offset_left = 110.0
+offset_top = -56.6667
+offset_right = 150.0
+offset_bottom = 7.33333
+theme_override_fonts/font = ExtResource("2_gvlpq")
+theme_override_font_sizes/font_size = 32
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Changes" type="RichTextLabel" parent="."]
+offset_left = 369.0
+offset_top = 322.0
+offset_right = 701.0
+offset_bottom = 389.0
+theme_override_fonts/normal_font = ExtResource("2_gvlpq")
+text = "Level Up! (8 --> 11)
++5 Max Hp   ( _/_ Total)
++1.1x DMG   (_._x Total)
++1.3x Shield (_._x Total)"
+
+[node name="Okay" type="Button" parent="."]
+offset_left = 438.0
+offset_top = 395.0
+offset_right = 616.0
+offset_bottom = 459.0
+theme = ExtResource("3_dqcpk")
+theme_override_font_sizes/font_size = 32
+text = "Okay"
+
+[connection signal="pressed" from="Okay" to="." method="_on_okay_pressed"]

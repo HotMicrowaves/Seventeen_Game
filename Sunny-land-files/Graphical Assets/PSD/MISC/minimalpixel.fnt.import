@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://cbn6s3i8orttb"
+path="res://.godot/imported/minimalpixel.fnt-84bba26dbe11eb4bf5e801a0602ff5b8.fontdata"
+
+[deps]
+
+source_file="res://Sunny-land-files/Graphical Assets/PSD/MISC/minimalpixel.fnt"
+dest_files=["res://.godot/imported/minimalpixel.fnt-84bba26dbe11eb4bf5e801a0602ff5b8.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://2yc5onmo1vxs"]
+
+[ext_resource type="Script" path="res://Settings.gd" id="1_5lecq"]
+[ext_resource type="Theme" uid="uid://b0uwx4lwuweaf" path="res://Buttons.tres" id="2_k5lbm"]
+[ext_resource type="Script" path="res://yes_no.gd" id="3_oguqv"]
+[ext_resource type="PackedScene" uid="uid://btga11mpq68bq" path="res://BG.tscn" id="3_tq71l"]
+[ext_resource type="Script" path="res://HSlider.gd" id="3_x1xof"]
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_5lecq")
+
+[node name="MusicVolume" type="Button" parent="."]
+offset_left = 422.0
+offset_top = 39.0
+offset_right = 778.0
+offset_bottom = 167.0
+theme = ExtResource("2_k5lbm")
+theme_override_font_sizes/font_size = 36
+text = "Music Volume"
+
+[node name="HSlider" type="HSlider" parent="MusicVolume"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 96.0
+offset_right = 360.0
+offset_bottom = 224.0
+min_value = -20.0
+max_value = 0.0
+script = ExtResource("3_x1xof")
+
+[node name="Skip Tutorial" type="Button" parent="."]
+offset_left = 265.0
+offset_top = 286.0
+offset_right = 621.0
+offset_bottom = 414.0
+theme = ExtResource("2_k5lbm")
+theme_override_font_sizes/font_size = 36
+text = "Skip Tutorial?"
+
+[node name="yes_no" type="Button" parent="Skip Tutorial"]
+layout_mode = 0
+offset_left = 377.0
+offset_right = 633.0
+offset_bottom = 128.0
+theme = ExtResource("2_k5lbm")
+text = "No"
+script = ExtResource("3_oguqv")
+
+[node name="Back" type="Button" parent="."]
+offset_left = -4.0
+offset_top = 524.0
+offset_right = 252.0
+offset_bottom = 652.0
+theme = ExtResource("2_k5lbm")
+text = "Back"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("3_tq71l")]
+
+[connection signal="tree_entered" from="." to="MusicVolume/HSlider" method="_on_settings_tree_entered"]
+[connection signal="tree_entered" from="." to="Skip Tutorial/yes_no" method="_on_settings_tree_entered"]
+[connection signal="value_changed" from="MusicVolume/HSlider" to="MusicVolume/HSlider" method="_on_value_changed"]
+[connection signal="pressed" from="Skip Tutorial/yes_no" to="Skip Tutorial/yes_no" method="_on_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

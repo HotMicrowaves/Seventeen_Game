@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://crsjfxuhnjc4n"]
+
+[ext_resource type="Script" path="res://Slot.gd" id="1_f0t2i"]
+[ext_resource type="Texture2D" uid="uid://bfnudd4xfg7kv" path="res://Cards/Back-1.png.png" id="2_vcv22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kl4v"]
+size = Vector2(7.79166, 13.5833)
+
+[node name="Slot" type="StaticBody2D" groups=["dropable"]]
+script = ExtResource("1_f0t2i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_5kl4v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vcv22")
+metadata/_edit_lock_ = true

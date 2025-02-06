@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d5dvicyvrs06"]
+
+[ext_resource type="Texture2D" uid="uid://dvaiwkja747fx" path="res://Cards/Button_Slot-1.png.png" id="1_5bry6"]
+[ext_resource type="Script" path="res://Operation_Slot.gd" id="1_se0mc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttnbl"]
+size = Vector2(16, 18)
+
+[node name="Operation_Slot" type="StaticBody2D" groups=["operation_dropable"]]
+script = ExtResource("1_se0mc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_5bry6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.500001)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_ttnbl")

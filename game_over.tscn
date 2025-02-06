@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgj022cj4nits"]
+
+[ext_resource type="Texture2D" uid="uid://dw04xqd517vkh" path="res://Cards/LeftBar-1.png.png" id="1_f5u43"]
+[ext_resource type="Script" path="res://game_over.gd" id="1_rwicn"]
+[ext_resource type="Texture2D" uid="uid://dre5i1sol8syw" path="res://Cards/MidBar-1.png.png" id="2_preqo"]
+[ext_resource type="Texture2D" uid="uid://3jxo1gpvl3dq" path="res://Cards/RightBar-1.png.png" id="3_xajoa"]
+[ext_resource type="FontFile" uid="uid://c3dyxmuf6bi4k" path="res://MinimalPixel v2.ttf" id="4_ywo8x"]
+[ext_resource type="Theme" uid="uid://b0uwx4lwuweaf" path="res://Buttons.tres" id="5_rieys"]
+[ext_resource type="Script" path="res://Game_Over_Label.gd" id="6_c8qsc"]
+
+[node name="Game Over" type="Node2D"]
+script = ExtResource("1_rwicn")
+
+[node name="BG" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 657.0
+color = Color(0.133333, 0.133333, 0.133333, 1)
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="LeftBar-1_png" type="Sprite2D" parent="UI"]
+position = Vector2(244, 71)
+texture = ExtResource("1_f5u43")
+
+[node name="MidBar-1_png" type="Sprite2D" parent="UI"]
+position = Vector2(509, 71)
+texture = ExtResource("2_preqo")
+
+[node name="RightBar-1_png" type="Sprite2D" parent="UI"]
+position = Vector2(875, 71)
+texture = ExtResource("3_xajoa")
+
+[node name="LeftBar-1_png2" type="Sprite2D" parent="UI"]
+position = Vector2(1080, 245)
+rotation = 1.5708
+texture = ExtResource("1_f5u43")
+
+[node name="LeftBar-1_png3" type="Sprite2D" parent="UI"]
+position = Vector2(-48, 244)
+rotation = 1.5708
+texture = ExtResource("1_f5u43")
+
+[node name="LeftBar-1_png4" type="Sprite2D" parent="UI"]
+position = Vector2(245, 704)
+texture = ExtResource("1_f5u43")
+
+[node name="MidBar-1_png4" type="Sprite2D" parent="UI"]
+position = Vector2(560, 704)
+texture = ExtResource("2_preqo")
+
+[node name="RightBar-1_png4" type="Sprite2D" parent="UI"]
+position = Vector2(874, 704)
+texture = ExtResource("3_xajoa")
+
+[node name="RightBar-1_png2" type="Sprite2D" parent="UI"]
+position = Vector2(1080, 379)
+rotation = 1.5708
+texture = ExtResource("3_xajoa")
+
+[node name="RightBar-1_png3" type="Sprite2D" parent="UI"]
+position = Vector2(-48, 377)
+rotation = 1.5708
+texture = ExtResource("3_xajoa")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 405.0
+offset_top = 133.0
+offset_right = 755.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("4_ywo8x")
+theme_override_font_sizes/font_size = 64
+text = "Game over"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 402.0
+offset_top = 197.0
+offset_right = 752.0
+offset_bottom = 264.0
+theme_override_fonts/font = ExtResource("4_ywo8x")
+theme_override_font_sizes/font_size = 32
+script = ExtResource("6_c8qsc")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 319.0
+offset_top = 347.0
+offset_right = 544.0
+offset_bottom = 472.0
+theme = ExtResource("5_rieys")
+text = "Restart
+"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 597.0
+offset_top = 348.0
+offset_right = 822.0
+offset_bottom = 473.0
+theme = ExtResource("5_rieys")
+text = "Quit
+"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 513.0
+offset_top = 273.0
+offset_right = 649.0
+offset_bottom = 300.0
+theme_override_fonts/font = ExtResource("4_ywo8x")
+theme_override_font_sizes/font_size = 24
+text = "Try again?"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

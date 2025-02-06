@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dua6ji4xtbqnb"]
+
+[ext_resource type="Texture2D" uid="uid://ce1pyg75onvi5" path="res://Cards/Enemy_Bar_Outline-1.png-1.png.png" id="1_8xce3"]
+[ext_resource type="Texture2D" uid="uid://coi8u1y8vmq24" path="res://Cards/Shield_Slider-1.png.png" id="2_073x6"]
+[ext_resource type="Script" path="res://Shield_Slider.gd" id="3_q4r5i"]
+[ext_resource type="Theme" uid="uid://cmh48a56jrpto" path="res://Text.tres" id="4_hc053"]
+[ext_resource type="Script" path="res://Shield_Text.gd" id="4_la54i"]
+
+[node name="Shield_Bar" type="TextureProgressBar" groups=["Shield_Bar"]]
+offset_right = 100.0
+offset_bottom = 32.0
+texture_under = ExtResource("1_8xce3")
+texture_progress = ExtResource("2_073x6")
+script = ExtResource("3_q4r5i")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 32.0
+theme = ExtResource("4_hc053")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_la54i")
